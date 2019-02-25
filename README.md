@@ -1,4 +1,4 @@
-# Minischeme Parser
+# Minischeme Parser [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/fxg42/minischeme-parser/blob/master/LICENSE) [![Build Status](https://travis-ci.org/fxg42/minischeme-parser.svg?branch=master)](https://travis-ci.org/fxg42/minischeme-parser) 
 
 Créé dans le cadre du projet de session pour INF2050 à l'hiver 2019.
 
