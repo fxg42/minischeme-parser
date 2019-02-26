@@ -10,7 +10,7 @@ import org.antlr.v4.runtime.CharStreams;
 public class Parser {
 
   @SuppressWarnings("unchecked")
-  public static List<Object> fromString(final String source) throws Exception {
+  public static List<Object> parseString(final String source) throws Exception {
     var input = CharStreams.fromString(source);
     var lexer = new MinischemeLexer(input);
     var tokens = new CommonTokenStream(lexer);

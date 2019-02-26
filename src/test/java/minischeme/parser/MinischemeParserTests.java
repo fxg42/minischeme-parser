@@ -15,7 +15,7 @@ class MinischemeParserTests {
   void listOfAtoms() throws Exception {
     var source = "(+ 1.0 2.0 3.0)";
 
-    var parsed = (List<Object>) Parser.fromString(source);
+    var parsed = (List<Object>) Parser.parseString(source);
 
     assertEquals(4, parsed.size());
     assertEquals("+", (String) parsed.get(0));
@@ -29,7 +29,7 @@ class MinischemeParserTests {
   void booleanTest() throws Exception {
     var source = "(and #t #f)";
 
-    var parsed = (List<Object>) Parser.fromString(source);
+    var parsed = (List<Object>) Parser.parseString(source);
 
     assertEquals(3, parsed.size());
     assertTrue((boolean) parsed.get(1));
@@ -41,7 +41,7 @@ class MinischemeParserTests {
   void listOfLists() throws Exception {
     var source = "(begin (define x (+ 1 2)) (< x 10))";
 
-    var parsed = (List<Object>) Parser.fromString(source);
+    var parsed = (List<Object>) Parser.parseString(source);
 
     assertEquals(3, parsed.size());
     assertEquals("begin", (String) parsed.get(0));
@@ -68,7 +68,7 @@ class MinischemeParserTests {
   void possiblyAmbiguous() throws Exception {
     var source = "(+ +1.0 +2.0)";
 
-    var parsed = (List<Object>) Parser.fromString(source);
+    var parsed = (List<Object>) Parser.parseString(source);
 
     assertEquals(3, parsed.size());
     assertEquals("+", (String) parsed.get(0));
