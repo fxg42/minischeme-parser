@@ -75,4 +75,26 @@ class MinischemeParserTests {
     assertEquals(1.0d, (double) parsed.get(1));
     assertEquals(2.0d, (double) parsed.get(2));
   }
+
+  @Test
+  @DisplayName("Comments intermingled with code")
+  void comments() throws Exception {
+    var source =
+        ";; start of line comment\n"
+      + "(begin ;; end of line comment\n"
+      + "(+ 1 2)) ;; end of file comment"
+      ;
+
+    var parsed = (List<Object>) Parser.parseString(source);
+
+    assertEquals(2, parsed.size());
+    assertEquals("begin", (String) parsed.get(0));
+
+    var expr = (List<Object>) parsed.get(1);
+
+    assertEquals(3, expr.size());
+    assertEquals("+", (String) expr.get(0));
+    assertEquals(1.0d, (double) expr.get(1));
+    assertEquals(2.0d, (double) expr.get(2));
+  }
 }

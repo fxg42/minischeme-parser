@@ -55,6 +55,9 @@ WHITESPACE
    : (' ' | '\n' | '\t' | '\r') + -> skip
    ;
 
+LINE_COMMENT
+  : ';;' ~[\r\n]* -> skip
+  ;
 
 NUMBER
    : ('+' | '-')? (DIGIT) + ('.' (DIGIT) +)?
