@@ -2,14 +2,25 @@
 
 Créé dans le cadre du projet de session pour INF2050 à l'hiver 2019.
 
+
 ## Prérequis
 
 - JDK 11
 
-## Compilation et exécution des tests
+
+## Compilation et exécution des tests avec Gradle
 
     ./gradlew junitConsole
 
 ou, en windows:
 
     gradlew.bat junitConsole
+
+
+## Compilation et exécution des tests avec Maven
+
+    ./mvnw clean test
+
+ou, en windows:
+
+    mvnw.cmd clean test
